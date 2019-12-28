@@ -1,0 +1,37 @@
+.m-footer {
+  background: $secondary;
+  color: #fff;
+  padding-top: $spacer;
+  padding-bottom: 10px;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.m-footer__title {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: $spacer;
+  font-weight: 700;
+}
+
+.m-footer__list {
+  padding: 0;
+  list-style-type: none;
+  margin-top: -$spacer/2;
+
+  padding: 2px 0;
+}
+
+.m-footer__copy {
+  text-align: center;
+  font-size: 0.5625rem;
+  margin-bottom: 0;
+}

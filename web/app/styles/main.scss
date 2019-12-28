@@ -1,0 +1,40 @@
+// Bootstrap
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import './00_base/global';
+@import 'node_modules/bootstrap/scss/mixins';
+
+@import 'node_modules/bootstrap/scss/root';
+@import 'node_modules/bootstrap/scss/print';
+@import 'node_modules/bootstrap/scss/reboot';
+@import 'node_modules/bootstrap/scss/type';
+@import 'node_modules/bootstrap/scss/grid';
+@import 'node_modules/bootstrap/scss/utilities';
+
+// * Patern Lab css structure
+// BASE
+@import './00_base/mixins.scss';
+@import './00_base/elements';
+
+// ICON FONT
+@import '../assets/icomoon/style.css';
+
+// ATOMS eg. a-button, a-icon
+@import './01_atom/**';
+
+// *MOLECULE eg. m-teaser
+@import './02_molecule/**';
+
+// ORGANISM eg. o-teaser-list
+@import './03_organism/**';
+
+// TEMPLATES eg. t-section
+// re-used on many web pages
+@import './04_template/**';
+
+// PAGES
+// pecific implementation of a template
+@import './05_page/**';
+
+// Overites everything
+@import './00_base/helpers';

@@ -1,0 +1,26 @@
+.m-ticker {
+  width: 200%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.m-ticker__item {
+  font-size: 6.5625rem; // 105px
+  display: inline-block;
+  position: relative;
+  padding-right: 65px;
+
+  a {
+    text-decoration: none;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 5px;
+    right: 0;
+    top: 56.2%;
+    background: $primary;
+  }
+}

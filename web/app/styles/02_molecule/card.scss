@@ -1,0 +1,29 @@
+.m-card {
+  border-bottom: 1px solid $secondary;
+  margin-bottom: $spacer;
+  padding-bottom: 5px;
+
+  >a {
+    display: block;
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  picture {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+.m-card__title,
+.m-card__artist {
+  display: block;
+  font-size: 0.75rem;
+}
+
+.m-card__artist {
+  text-align: right;
+}

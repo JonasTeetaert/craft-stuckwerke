@@ -1,0 +1,9 @@
+.t-page__subtitle {
+  font-size: 1.25rem;
+}
+
+@include media-breakpoint-up(md) {
+  .t-page__rte {
+    margin-left: 20%;
+  }
+}

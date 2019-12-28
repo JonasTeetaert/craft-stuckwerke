@@ -1,0 +1,161 @@
+.m-nav {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: $spacer/2;
+  z-index: 1;
+}
+
+.m-nav__bar {
+  position: relative;
+  display: flex;
+}
+
+.m-nav__hamburger {
+  margin-top: 4px;
+}
+
+.m-nav__logo {
+  display: inline-block;
+  width: 140px;
+  margin-left: $spacer*2;
+}
+
+.m-nav__func-nav {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  li {
+    display: inline-block;
+    margin: 0 $spacer/2;
+
+    a {
+      text-decoration: none;
+
+
+      &:hover,
+      &:focus {
+        color: $secondary;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.m-nav__func-nav--mobile {
+  position: static;
+  display: block;
+
+  li {
+    display: block;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+.m-nav__overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: $primary;
+  color: #fff;
+  padding: $spacer*1.5;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: all 500ms ease;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.m-nav__close {
+  position: absolute;
+  right: $spacer/2;
+  top: $spacer/2;
+
+  &:hover,
+  &:focus {
+
+    &:before,
+    &:after {
+      background: $secondary;
+    }
+  }
+}
+
+.m-nav__items ul,
+.m-nav__items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.m-nav__items {
+
+  a {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      //color: $secondary;
+      transform: translateX(15px);
+    }
+  }
+
+  >li {
+    font-weight: $font-weight-bold;
+    // font-size: 3.875rem; // 62px
+    font-size: 2.5rem;
+    margin: $spacer/2 0;
+
+    >ul {
+      margin-top: $spacer/2;
+
+      >li {
+        font-size: 2rem;
+        font-weight: $font-weight-light;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .m-nav {
+    padding: $spacer/2 $spacer;
+  }
+
+  .m-nav__overlay {
+    width: 100vh;
+    padding: $spacer*2;
+  }
+
+  .m-nav__items {
+
+    >li {
+      font-size: 3.875rem; // 62px
+
+      >ul {
+        >li {
+          font-size: 3.125rem; // 50px
+        }
+      }
+    }
+  }
+
+  .m-nav__func-nav {
+    display: block;
+  }
+
+  .m-nav__func-nav--mobile {
+    display: none;
+  }
+}
