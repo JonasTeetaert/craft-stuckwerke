@@ -1,0 +1,29 @@
+{% extends "_layouts/page" %}
+
+{% block pageHeader %}
+<h1>{{ category.pageTitle }}</h1>
+{% if category.pageDescription %}
+<p>{{ category.pageDescription }}</p>
+{% endif %}
+{% endblock %}
+
+{% block pageContent %}
+<div class="t-masonry">
+  {% for entry in craft.entries.relatedTo(category).limit(12).all() %}
+    <div class="m-card t-masonry__item">
+      <a href={{ entry.url }}>
+        <picture>
+          <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">
+        </picture>
+        <span class="m-card__title">{{ entry.title }}</span>
+        <span class="m-card__artist">{{ entry.artist }} </span>
+      </a>
+    </div>
+    {% if loop.index == 1 or loop.index == 6 or loop.index == 11 %}
+      <div class="t-masonry__item">
+        {% include '_illustrations/waves' %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}

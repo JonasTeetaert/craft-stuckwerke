@@ -1,0 +1,56 @@
+{% extends "_layouts/main" %}
+
+{% block main %}
+<section class="t-section">
+  <div class="m-ticker">
+    <span class="m-ticker__item"><a href="#">ein gedanke</a></span>
+    <span class="m-ticker__item"><a href="#">eine idee</a></span>
+    <span class="m-ticker__item"><a href="#">ein satz</a></span>
+    <span class="m-ticker__item"><a href="#">eine geschichte</a></span>
+    <span class="m-ticker__item"><a href="#">ein text</a></span>
+    <span class="m-ticker__item"><a href="#">eine konzeption</a></span>
+    <span class="m-ticker__item"><a href="#">ein ereigniss</a></span>
+    <span class="m-ticker__item"><a href="#">ein erlebnis</a></span>
+    <span class="m-ticker__item"><a href="#">ein erfolg</a></span>
+  </div>
+</section>
+<section class="t-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p class="t-page__subtitle">{{ entry.pageDescription }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="t-section">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>{{ entry.pageTitle }}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9 align-self-end t-masonry">
+        {% for entry in craft.entries.section('liveRecordings').limit(12).all() %}
+          <div class="m-card t-masonry__item">
+            <a href={{ entry.url }}>
+              <picture>
+                <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">
+              </picture>
+              <span class="m-card__title">{{ entry.title }}</span>
+              <span class="m-card__artist">{{ entry.artist }} </span>
+            </a>
+          </div>
+          {% if loop.index == 1 or loop.index == 6 or loop.index == 11 %}
+            <div class="t-masonry__item">
+              {% include '_illustrations/waves' %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

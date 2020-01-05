@@ -1,0 +1,22 @@
+{% extends "_layouts/main" %}
+
+{% block main %}
+<section class="t-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        {% block pageHeader %} {% endblock %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="t-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        {% block pageContent %} {% endblock %}
+      </div>
+    </div>
+</section>
+{% endblock %}
