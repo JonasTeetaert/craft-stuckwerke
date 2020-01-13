@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee22c0129c75d24a75dabd425d86c90e",
+    "content-hash": "ec69e4293986ae4fa3b904d8e47f46cf",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -518,6 +518,55 @@
             "time": "2019-05-23T13:16:39+00:00"
         },
         {
+            "name": "craftcms/redactor",
+            "version": "2.4.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/8fd0daca685309ad8635f28dca8c9ab2b3f228d4",
+                "reference": "8fd0daca685309ad8635f28dca8c9ab2b3f228d4",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.2.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Redactor",
+                "handle": "redactor",
+                "documentationUrl": "https://github.com/craftcms/redactor/blob/v2/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\redactor\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Edit rich text content in Craft CMS using Redactor by Imperavi.",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "html",
+                "redactor",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/redactor/issues?state=open",
+                "source": "https://github.com/craftcms/redactor",
+                "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
+                "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
+            },
+            "time": "2019-09-13T11:02:32+00:00"
+        },
+        {
             "name": "craftcms/server-check",
             "version": "1.1.7",
             "dist": {
@@ -799,6 +848,86 @@
                 "html"
             ],
             "time": "2019-10-28T03:44:26+00:00"
+        },
+        {
+            "name": "froala/craft-froala-wysiwyg",
+            "version": "2.9.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/Craft-3-Froala-WYSIWYG/zipball/31802b6335c148ba2055e16909f7704dcc688591",
+                "reference": "31802b6335c148ba2055e16909f7704dcc688591",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0",
+                "froala/wysiwyg-editor": "2.9.5"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Froala WYSIWYG Editor",
+                "handle": "froala-editor",
+                "hasSettings": true,
+                "developer": "Bert Oost",
+                "developerUrl": "https://bertoost.com",
+                "documentationUrl": "https://github.com/froala/Craft-3-Froala-WYSIWYG/blob/master/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "froala\\craftfroalawysiwyg\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Craft 3 CMS plugin for Froala WYSIWYG HTML Rich Text Editor.",
+            "homepage": "https://github.com/froala/Craft-3-Froala-WYSIWYG",
+            "keywords": [
+                "craft",
+                "craftcms",
+                "craftcms plugin",
+                "froala",
+                "plugin",
+                "wysiwyg"
+            ],
+            "time": "2019-06-08T09:03:30+00:00"
+        },
+        {
+            "name": "froala/wysiwyg-editor",
+            "version": "v2.9.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/wysiwyg-editor/zipball/e9d09c486c927d2646064b82e26307e8fee75700",
+                "reference": "e9d09c486c927d2646064b82e26307e8fee75700",
+                "shasum": ""
+            },
+            "type": "component",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Froala Labs",
+                    "email": "support@froala.com"
+                }
+            ],
+            "description": "A beautiful jQuery WYSIWYG HTML rich text editor. High performance and modern design make it easy to use for developers and loved by users.",
+            "homepage": "https://www.froala.com/wysiwyg-editor",
+            "keywords": [
+                "editor",
+                "froala",
+                "froala-editor",
+                "froala-wysiwyg",
+                "html",
+                "javascript",
+                "jquery",
+                "jquery-plugin",
+                "rich editor",
+                "rich text editor",
+                "rte",
+                "text",
+                "wysiwyg"
+            ],
+            "time": "2019-04-12T09:45:52+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2571,11 +2700,6 @@
         {
             "name": "twig/twig",
             "version": "v2.12.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "97b6311585cae66a26833b14b33785f5797f7d39"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/twigphp/Twig/zipball/97b6311585cae66a26833b14b33785f5797f7d39",
@@ -2884,11 +3008,6 @@
         {
             "name": "voku/portable-utf8",
             "version": "5.4.35",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/voku/portable-utf8.git",
-                "reference": "1c6b2b32b61963e5a53be9506f46955c1a27d7bd"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/voku/portable-utf8/zipball/1c6b2b32b61963e5a53be9506f46955c1a27d7bd",

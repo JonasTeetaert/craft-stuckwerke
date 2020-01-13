@@ -2,22 +2,22 @@
   <div class="m-nav__overlay">
     <span class="a-close m-nav__close"></span>
     <ul class="m-nav__items">
-      <li><a href="#">Tonproduction</a></li>
+      <li><a href="/tonproduktion">{{ craft.entries.section('tonproduktion').one().title }}</a></li>
       <li>
-        <a href="#">Hörbuch</a>
+        <a href="/horbuch">Hörbuch</a>
         <ul>
-          <li><a href="#">Mitschnitt</a></li>
-          <li><a href="#">Filmhörspiel</a></li>
-          <li><a href="#">Sprache &amp; Musik</a></li>
+          <li><a href="/horbuch/live-mitschnitt">{{ craft.entries.section('liveMitschnitt').one().title }}</a></li>
+          <li><a href="/horbuch/filmhorspiel">{{ craft.entries.section('filmhorspiel').one().title }}</a></li>
+          <li><a href="/horbuch/sprache-musik">{{ craft.entries.section('spracheMusik').one().title }}</a></li>
         </ul>
       </li>
       <li><a href="#">Veranstaltung</a></li>
     </ul>
     <ul class="m-nav__func-nav m-nav__func-nav--mobile">
-      <li><a href="#">Uber uns</a></li>
-      <li><a href="#">Referenzen</a></li>
-      <li><a href="#">Impressum</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="/uber-uns">{{ craft.entries.section('uberUns').one().title }}</a></li>
+      <li><a href="/referenzen">{{ craft.entries.section('referenzen').one().title }}</a></li>
+      <li><a href="/impressum">{{ craft.entries.section('impressum').one().title }}</a></li>
+      <li><a href="/contact">{{ craft.entries.section('contact').one().title }}</a></li>
     </ul>
   </div>
   <div class="m-nav__bar">
@@ -114,10 +114,10 @@
       </svg>
     </a>
     <ul class="m-nav__func-nav">
-      <li><a href="#">Uber uns</a></li>
-      <li><a href="#">Referenzen</a></li>
-      <li><a href="#">Impressum</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="/uber-uns">{{ craft.entries.section('uberUns').one().title }}</a></li>
+      <li><a href="/referenzen">{{ craft.entries.section('referenzen').one().title }}</a></li>
+      <li><a href="/impressum">{{ craft.entries.section('impressum').one().title }}</a></li>
+      <li><a href="/contact">{{ craft.entries.section('contact').one().title }}</a></li>
     </ul>
   </div>
 </nav>

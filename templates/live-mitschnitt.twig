@@ -1,9 +1,9 @@
 {% extends "_layouts/page" %}
 
 {% block pageHeader %}
-  <h1>{{ entry.pageTitle }}</h1>
+  <h1><a href="/horbuch" class="icon-left-arrow t-page__back"></a>{{ entry.pageTitle }}</h1>
   {% if entry.pageDescription %}
-    <p>{{ entry.pageDescription }}</p>
+    <p class="t-page__subtitle">{{ entry.pageDescription }}</p>
   {% endif %}
 {% endblock %}
 

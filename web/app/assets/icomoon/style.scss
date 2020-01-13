@@ -1,19 +1,18 @@
-@import '../assets/icomoon/variables.scss';
+@import "variables";
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ddus4j');
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ddus4j#iefix') format('embedded-opentype'),
-  url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ddus4j') format('truetype'),
-  url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ddus4j') format('woff'),
-  url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ddus4j##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?i58jh3');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?i58jh3#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?i58jh3') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?i58jh3') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?i58jh3##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: '#{$icomoon-font-family}' !important;
   speak: none;
@@ -28,14 +27,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-left-arrow {
+  &:before {
+    content: $icon-left-arrow; 
+  }
+}
 .icon-pause {
   &:before {
-    content: $icon-pause;
+    content: $icon-pause; 
+  }
+}
+.icon-play {
+  &:before {
+    content: $icon-play; 
   }
 }
 
-.icon-play {
-  &:before {
-    content: $icon-play;
-  }
-}

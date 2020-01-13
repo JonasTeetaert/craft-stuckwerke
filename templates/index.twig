@@ -3,15 +3,13 @@
 {% block main %}
 <section class="t-section">
   <div class="m-ticker">
-    <span class="m-ticker__item"><a href="#">ein gedanke</a></span>
-    <span class="m-ticker__item"><a href="#">eine idee</a></span>
-    <span class="m-ticker__item"><a href="#">ein satz</a></span>
-    <span class="m-ticker__item"><a href="#">eine geschichte</a></span>
-    <span class="m-ticker__item"><a href="#">ein text</a></span>
-    <span class="m-ticker__item"><a href="#">eine konzeption</a></span>
-    <span class="m-ticker__item"><a href="#">ein ereigniss</a></span>
-    <span class="m-ticker__item"><a href="#">ein erlebnis</a></span>
-    <span class="m-ticker__item"><a href="#">ein erfolg</a></span>
+    {% for entry in craft.entries.section('laufschriftHome').all() %}
+       <span class="m-ticker__item">
+       {% if entry.relatedEntry | length %} <a href={{entry.relatedEntry.one().url }}> {% endif %}
+        {{entry.title}}
+       {% if entry.relatedEntry | length %} </a> {% endif %}
+      </span>
+    {% endfor %}
   </div>
 </section>
 <section class="t-section">
@@ -33,7 +31,8 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-9 align-self-end t-masonry">
-        {% for entry in craft.entries.section('liveRecordings').limit(12).all() %}
+        {% set tag =  craft.tags().title('*highlights*').one() %}
+        {% for entry in craft.entries.relatedTo(tag).limit(12).all() %}
           <div class="m-card t-masonry__item">
             <a href={{ entry.url }}>
               <picture>

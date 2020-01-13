@@ -71,6 +71,7 @@
   z-index: 100;
   transform: translateX(-100%);
   transition: all 500ms ease;
+  overflow: hidden;
 
   &.open {
     transform: translateX(0);
