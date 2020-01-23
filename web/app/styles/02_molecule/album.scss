@@ -15,6 +15,11 @@
   font-size: 0.6875rem;
   display: none;
 
+  ul {
+    list-style: none;
+    margin-bottom: 0;
+  }
+
   span {
     display: block;
   }
@@ -47,6 +52,14 @@
 
 .m-album__sample {
   margin-bottom: $spacer/2;
+}
+
+.m-album__format {
+  margin-bottom: 0;
+  color: $primary;
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 2px;
 }
 
 

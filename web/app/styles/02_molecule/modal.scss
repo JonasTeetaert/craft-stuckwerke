@@ -1,0 +1,92 @@
+.m-modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacer/2;
+  opacity: 0;
+  z-index: -100;
+
+  &.active {
+    z-index: 1000;
+    opacity: 1;
+  }
+}
+
+.m-modal__inner {
+  max-width: 800px;
+  max-height: 100%;
+  overflow-y: scroll;
+  background: #fff;
+  padding: $spacer;
+  position: relative;
+}
+
+.m-modal__close {
+  position: absolute;
+  right: $spacer/2;
+  top: $spacer/2;
+  width: 20px;
+  height: 20px;
+
+  &:before,
+  &:after {
+    background: $primary;
+  }
+}
+
+.m-modal__swiper {
+  height: 300px;
+  margin-bottom: $spacer;
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: auto;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: $primary;
+}
+
+.swiper-pagination-bullet-active {
+  background: $primary;
+}
+
+.m-modal__date {
+  color: $primary;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.m-modal__content {
+  max-width: 500px;
+  margin: auto;
+}
+
+.m-modal__cover {
+  max-width: 245px;
+  margin: auto;
+  margin-bottom: $spacer/2 !important;
+}
+
+@include media-breakpoint-up(md) {
+
+  .m-modal__cover,
+  .m-modal__cover-info {
+    display: inline-block;
+  }
+}

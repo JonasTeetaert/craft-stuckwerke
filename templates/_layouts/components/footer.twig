@@ -2,36 +2,37 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <h3 class="m-footer__title"><a href="#">Tonproduction</a></h3>
+        <h3 class="m-footer__title"><a href="/tonproduktion">{{ craft.entries.section('tonproduktion').one().title }}</a></h3>
         <ul class="m-footer__list">
-          <li><a href="#">Formats</a></li>
+          <li><a href="/tonproduktion#formats">{{ craft.entries.section('tonproduktion').one().pageTitle }}</a></li>
         </ul>
       </div>
       <div class="col">
-        <h3 class="m-footer__title"><a href="#">Hörbuch</a></h3>
+        <h3 class="m-footer__title"><a href="/horbuch">Hörbuch</a></h3>
         <ul class="m-footer__list">
-          <li><a href="#">Live Mitschnitt</a></li>
-          <li><a href="#">Filmhörspiel</a></li>
-          <li><a href="#">Spräche & Musik</a></li>
+          <li><a href="/horbuch/live-mitschnitt">{{ craft.entries.section('liveMitschnitt').one().title }}</a></li>
+          <li><a href="/horbuch/filmhorspiel">{{ craft.entries.section('filmhorspiel').one().title }}</a></li>
+          <li><a href="/horbuch/sprache-musik">{{ craft.entries.section('spracheMusik').one().title }}</a></li>
         </ul>
       </div>
       <div class="col">
-        <h3 class="m-footer__title"><a href="#">Uber uns</a></h3>
-        <h3 class="m-footer__title"><a href="#">Referenzen</a></h3>
-        <h3 class="m-footer__title"><a href="#">Impressum</a></h3>
+        <h3 class="m-footer__title"><a href="/uber-uns">{{ craft.entries.section('uberUns').one().title }}</a></h3>
+        <h3 class="m-footer__title"><a href="/referenzen">{{ craft.entries.section('referenzen').one().title }}</a></h3>
+        <h3 class="m-footer__title"><a href="/impressum">{{ craft.entries.section('impressum').one().title }}</a></h3>
       </div>
       <div class="col">
-        <h3 class="m-footer__title"><a href="#">Contact</a></h3>
-        <ul class="m-footer__list">
-          <li><a href="#">Admiralitätstrasse 75 20459 Hamburg</a></li>
-          <li><a href="mailto:#">info@diekulturfirma.de</a></li>
-          <li><a href="#">Tel. 040-76 90 80 45</a></li>
+        <h3 class="m-footer__title"><a href="/contact">{{ craft.entries.section('contact').one().title }}</a></h3>
+        <ul class="m-footer__list m-footer__lisst--contact">
+          {% set footer = craft.entries.section('footer').one() %}
+          <li>{{footer.adress}}</li>
+          <li><a href="mailto:{{footer.eMail}}">{{footer.eMail}}</a></li>
+          <li>Tel. {{footer.telephone}}</li>
         </ul>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <p class="m-footer__copy">Copyright Stückwerke Die Kulturfirma</p>
+        <p class="m-footer__copy">{{ footer.copyright }}</p>
       </div>
     </div>
   </div>

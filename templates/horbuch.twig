@@ -1,7 +1,11 @@
 {% extends "_layouts/page" %}
 
+{% block title %}
+Hörbuch
+{% endblock %}
+
 {% block pageHeader %}
-<h1>{{ category.pageTitle }}</h1>
+<h1 class="t-page__title">{{ category.pageTitle }}</h1>
 {% if category.pageDescription %}
 <p class="t-page__subtitle">{{ category.pageDescription }}</p>
 {% endif %}

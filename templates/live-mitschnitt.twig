@@ -1,7 +1,11 @@
 {% extends "_layouts/page" %}
 
+{% block title %}
+{{ entry.title }}
+{% endblock %}
+
 {% block pageHeader %}
-  <h1><a href="/horbuch" class="icon-left-arrow t-page__back"></a>{{ entry.pageTitle }}</h1>
+  <h1 class="t-page__title"><a href="/horbuch" class="icon-left-arrow t-page__back"></a>{{ entry.pageTitle }}</h1>
   {% if entry.pageDescription %}
     <p class="t-page__subtitle">{{ entry.pageDescription }}</p>
   {% endif %}
@@ -37,4 +41,10 @@
       </div>
     </div>
   {% endfor %}
+  {% block audio  %}
+    <div class="m-audio">
+      <canvas id="canvas"></canvas>
+      <audio id="audio" controls></audio>
+    </div>
+  {% endblock %}
 {% endblock %}

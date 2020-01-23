@@ -1,0 +1,125 @@
+{% extends "_layouts/main" %}
+
+{% block title %}
+{{ entry.title }}
+{% endblock %}
+
+{% block main %}
+<section class="t-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>{{ entry.pageTitle }}</h1>
+        {% if entry.pageDescription %}
+        <div class="t-page__subtitle">{{ entry.pageDescription}}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="t-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        {% for field in entry.contentBlock %}
+        {% switch field.type %}
+          {% case "image" %}
+          <figure class="t-page__image">
+            <picture>
+              <img src={{ field.source.one().getUrl() }} alt={{ field.caption }}>
+            </picture>
+            {% if entry.caption %}
+              <figcaption>{{ field.caption }}</figcaption>
+            {% endif %}
+          </figure>
+          {% case "text" %}
+          <div class="t-page__rte">
+            {{ field.richText }}
+          </div>
+        {% endswitch %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="t-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9 align-self-end t-masonry">
+        {% for entry in craft.entries.section(['events', 'podcasts']).all() %}
+        <div class="m-card t-masonry__item" data-target="modal">
+          <a href="#">
+            {% if entry.coverImage %}
+            <picture class="m-card__podcast-img">
+              <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">
+            </picture>
+            {% elseif entry.eventImages %}
+            <picture>
+              <img src={{ entry.eventImages.one().getUrl() }} alt="{{ entry.title }}">
+            </picture>
+            {% else %}
+            PODCAST ILLUSTRATION
+            {% endif %}
+            <span class="m-card__title">{{ entry.title }}</span>
+            {% if entry.artist %}
+            <span class="m-card__artist">{{ entry.artist }}</span>
+            {% endif %}
+            {% if entry.eventDate %}
+            <span class="m-card__artist">{{ entry.eventDate | date('d.m.Y') }}</span>
+            {% endif %}
+          </a>
+          <div class="m-modal">
+            <div class="m-modal__inner">
+              <a href="#" class="m-modal__close a-close"></a>
+              {% if entry.coverImage %}
+                <picture class="m-modal__cover">
+                  <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">
+                </picture>
+              {% endif %}
+              {% if entry.eventImages %}
+              <div class="m-modal__swiper swiper-container">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-wrapper">
+                  {% for img in entry.eventImages.all() %}
+                  <div class="swiper-slide">
+                    <img src={{ img.getUrl() }}>
+                  </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              {% endif %}
+              <div class="m-modal__content">
+                {% if entry.eventImages %}
+                  <h3>{{ entry.title}}</h3>
+                  {% if entry.eventDate %}
+                  <p class="m-modal__date">{{ entry.eventDate | date('d.m.Y') }}</p>
+                  {% endif %}
+                  <div>{{ entry.eventDescription}}</div>
+                {% endif %}
+
+                {% if entry.coverImage %}
+                  <h3>{{ entry.title}}</h3>
+                  <p>{{ entry.description }}</p>
+                  {% if entry.narrator %}
+                    <p><strong>Esrzaler:</strong> {{entry.narrator}}</p>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if loop.index == 1 or loop.index == 6 or loop.index == 11 %}
+        <div class="t-masonry__item">
+          {% include '_illustrations/waves' %}
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,9 +1,45 @@
+.t-page__title {
+  margin-bottom: 0;
+  position: relative;
+}
+
 .t-page__subtitle {
+  margin-top: $spacer;
   font-size: 1.25rem;
 }
+
+.t-page--content-header {
+  display: flex;
+
+  .t-page__image {
+    margin-right: $spacer;
+  }
+}
+
+.t-page__back {
+  text-decoration: none;
+  font-size: 25px;
+  position: relative;
+  top: -18px;
+  left: 0;
+  position: absolute;
+
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 
 @include media-breakpoint-up(md) {
   .t-page__rte {
     margin-left: 20%;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .t-page__back {
+    top: 24px;
+    left: -38px;
   }
 }

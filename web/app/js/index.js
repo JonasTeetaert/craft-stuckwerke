@@ -1,2 +1,3 @@
 import './main';
-import './components/nav';
+import './components/Navigation'
+import './components/Modal';

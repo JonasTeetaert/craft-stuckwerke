@@ -1,5 +1,9 @@
 {% extends "_layouts/main" %}
 
+{% block title %}
+{{ entry.title }}
+{% endblock %}
+
 {% block main %}
 <section class="t-section">
   <div class="m-ticker">
@@ -15,8 +19,24 @@
 <section class="t-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
-        <p class="t-page__subtitle">{{ entry.rteDescription }}</p>
+      <div class="col-md-8 t-page--content-header">
+        {% for field in entry.contentBlock %}
+        {% switch field.type %}
+          {% case "image" %}
+          <figure class="t-page__image">
+            <picture>
+              <img src={{ field.source.one().getUrl() }} alt={{ field.caption }}>
+            </picture>
+            {% if entry.caption %}
+              <figcaption>{{ field.caption }}</figcaption>
+            {% endif %}
+          </figure>
+          {% case "text" %}
+          <div class="t-page__content">
+            {{ field.richText }}
+          </div>
+        {% endswitch %}
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -25,12 +45,42 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <h1>{{ entry.pageTitle }}</h1>
+        <h1 id="formats">{{ entry.pageTitle }}</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3"></div>
-      <div class="col-md-9 align-self-end">
+      <div class="col-md-9">
+      {% for sample in craft.entries.section('formats').all()  %}
+        <div class="m-album" id="{{ sample.slug }}">
+          <div class="m-album__info">
+            {% if sample.info %}
+              <ul>
+              {% for row in sample.info %}
+                <li>{{ row.infoData }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+          <div class="m-album__cover">
+            <picture>
+              <img src={{ sample.coverImage.one().getUrl() }} alt="{{ sample.artist }} - {{ sample.title }}">
+            </picture>
+          </div>
+          <div class="m-album__description">
+            <p class="m-album__format">{{ sample.format.one() }}</p>
+            <p>{{ sample.description }}</p>
+            {% if sample.narrator %}
+              <p><strong>Esrzaler:</strong> {{sample.narrator}}</p>
+            {% endif %}
+              {% if sample.audioSample | length %}
+              <div class="m-album__sample">
+                <button class="btn btn-play"><span class="icon-play"></span><span>Abspielen</span></button>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
       </div>
     </div>
   </div>

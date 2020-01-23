@@ -1,0 +1,24 @@
+.m-contact {
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.m-contact__item {
+  margin-bottom: $spacer;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .m-contact__item {
+    margin-right: $spacer*2;
+    margin-bottom: $spacer*2;
+  }
+}
