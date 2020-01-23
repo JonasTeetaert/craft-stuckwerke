@@ -31,7 +31,11 @@
       <div class="m-album__description">
         {% if sample.audioSample | length %}
           <div class="m-album__sample">
-            <button class="btn btn-play"><span class="icon-play"></span><span>Abspielen</span></button>
+            <button class="btn btn-play"><span class="icon icon-play"></span><span class="word">Play</span></button>
+            <canvas></canvas>
+            <audio>
+              <source src={{sample.audioSample.one().getUrl()}}></source>
+            </audio>
           </div>
         {% endif %}
         <p>{{ sample.description }}</p>
@@ -44,7 +48,6 @@
   {% block audio  %}
     <div class="m-audio">
       <canvas id="canvas"></canvas>
-      <audio id="audio" controls></audio>
     </div>
   {% endblock %}
 {% endblock %}

@@ -52,6 +52,30 @@
 
 .m-album__sample {
   margin-bottom: $spacer/2;
+  display: flex;
+
+  button {
+    &:focus {
+      outline: none;
+    }
+
+    margin-right: $spacer/2;
+  }
+
+  canvas {
+    height: 50px;
+    width: 88%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    canvas {
+      position: fixed;
+      left: $spacer * 1.5;
+      bottom: $spacer * 1.5;
+      width: 30%;
+      height: 80px;
+    }
+  }
 }
 
 .m-album__format {
