@@ -1,6 +1,12 @@
 .t-page__title {
   margin-bottom: 0;
   position: relative;
+
+  span {
+    width: 24px;
+    display: inline-block;
+    margin-right: 5px;
+  }
 }
 
 .t-page__subtitle {

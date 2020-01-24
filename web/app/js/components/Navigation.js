@@ -6,12 +6,6 @@ class Navigation {
 
     this.hamburger.addEventListener('click', this.open.bind(this));
     this.btnClose.addEventListener('click', this.close.bind(this));
-
-    this.init();
-  }
-
-  init() {
-    this.overlay.classList.add('loaded');
   }
 
   open(e) {
