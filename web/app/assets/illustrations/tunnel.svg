@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 628 692.83">
+  <title>tunnel</title>
+  <g>
+    <circle cx="315.2" cy="670.4" r="21.93" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="315.2" cy="657.65" r="21.93" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="315.2" cy="644.89" r="21.93" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="315.2" cy="630.53" r="23.52" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <ellipse cx="315.2" cy="604.22" rx="25.12" ry="24.32" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="315.2" cy="617.78" r="23.52" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="315.99" cy="591.86" r="25.52" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="316.39" cy="579.1" r="26.31" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="316.39" cy="566.34" r="27.11" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="314.8" cy="554.38" r="27.11" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="316.39" cy="541.62" r="28.71" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="316.39" cy="528.86" r="30.3" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="316.39" cy="516.9" r="31.9" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="316.39" cy="504.94" r="33.49" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="316.39" cy="494.57" r="35.09" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <circle cx="316.39" cy="481.82" r="37.48" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <ellipse cx="316.39" cy="469.85" rx="37.48" ry="39.87" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <ellipse cx="316.39" cy="456.3" rx="39.87" ry="42.42" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <ellipse cx="316.39" cy="450.72" rx="44.66" ry="47.51" style="fill: none;stroke: #eee;stroke-miterlimit: 10"/>
+    <ellipse cx="316.39" cy="435.56" rx="44.66" ry="47.51" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 2px"/>
+    <ellipse cx="315.59" cy="428.39" rx="51.72" ry="55.02" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 2px"/>
+    <ellipse cx="315.59" cy="415.66" rx="55.52" ry="59.06" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 3px"/>
+    <ellipse cx="315.59" cy="404.54" rx="60.82" ry="64.7" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 3px"/>
+    <ellipse cx="314.93" cy="393.89" rx="67.18" ry="71.47" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 4px"/>
+    <ellipse cx="315.56" cy="383.88" rx="76.32" ry="81.19" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 4px"/>
+    <ellipse cx="314.83" cy="372.62" rx="85.87" ry="91.36" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 5px"/>
+    <ellipse cx="315.33" cy="358.04" rx="99.54" ry="102.29" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 6px"/>
+    <ellipse cx="315.33" cy="348.65" rx="119.89" ry="123.2" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 7px"/>
+    <ellipse cx="314" cy="336.29" rx="151.91" ry="152.31" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 8px"/>
+    <ellipse cx="314.4" cy="325.72" rx="202.94" ry="204.74" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 7px"/>
+    <ellipse cx="314" cy="316.97" rx="309" ry="311.97" style="fill: none;stroke: #eee;stroke-miterlimit: 10;stroke-width: 10px"/>
+  </g>
+</svg>

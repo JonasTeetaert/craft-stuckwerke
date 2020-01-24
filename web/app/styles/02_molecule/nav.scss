@@ -71,10 +71,28 @@
   z-index: 100;
   transform: translateX(-100%);
   transition: all 500ms ease;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   &.open {
     transform: translateX(0);
+  }
+
+  @include media-breakpoint-up(md) {
+    overflow: hidden;
+  }
+}
+
+.m-nav__circles {
+  display: none;
+  position: absolute;
+  right: -425px;
+  bottom: -425px;
+  z-index: -1;
+  width: 850px;
+
+  @include media-breakpoint-up(md) {
+    display: block;
   }
 }
 

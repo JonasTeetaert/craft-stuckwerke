@@ -1,0 +1,18 @@
+.a-sketch {
+  position: absolute;
+  z-index: -10;
+}
+
+.a-sketch--circles-home {
+  @include media-breakpoint-up(md) {
+    width: 600px;
+    top: 450px;
+    right: -135px;
+  }
+}
+
+.a-sketch--tunnel {
+  bottom: 50px;
+  left: 30px;
+  width: 600px;
+}
