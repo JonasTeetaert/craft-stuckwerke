@@ -83,6 +83,14 @@
   margin-bottom: $spacer/2 !important;
 }
 
+.m-modal__audio {
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 @include media-breakpoint-up(md) {
 
   .m-modal__cover,

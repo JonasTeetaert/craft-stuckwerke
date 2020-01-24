@@ -76,9 +76,12 @@
   padding: $spacer*1.5;
   z-index: 100;
   transform: translateX(-100%);
-  transition: all 500ms ease;
   overflow-x: hidden;
   overflow-y: scroll;
+
+  &.loaded {
+    transition: all 500ms ease;
+  }
 
   &.open {
     transform: translateX(0);

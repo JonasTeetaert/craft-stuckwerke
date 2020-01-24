@@ -98,10 +98,15 @@
                   {% if entry.eventDate %}
                   <p class="m-modal__date">{{ entry.eventDate | date('d.m.Y') }}</p>
                   {% endif %}
-                  <div>{{ entry.eventDescription}}</div>
+                  <div>{{ entry.eventDescription }}</div>
                 {% endif %}
 
                 {% if entry.coverImage %}
+                  {% if entry.audioSample %} 
+                  <audio class="m-modal__audio" controls>
+                    <source src={{entry.audioSample.one().getUrl()}}></source>
+                  </audio>
+                  {% endif %}
                   <h3>{{ entry.title}}</h3>
                   <p>{{ entry.description }}</p>
                   {% if entry.narrator %}
