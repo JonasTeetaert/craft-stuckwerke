@@ -5,15 +5,63 @@ Die Kulturfirma
 {% endblock %}
 
 {% block main %}
-<section class="t-section">
+<section class="t-section m-ticker-wrapper">
+  {% set length = craft.entries.section('laufschriftHome') | length %}
   <div class="m-ticker">
-    {% for entry in craft.entries.section('laufschriftHome').all() %}
+    <div>
+      {% set counter = 0 %} 
+      {% for entry in craft.entries.section('laufschriftHome').all() %}
+      {% if counter < (length / 2) %}
        <span class="m-ticker__item">
        {% if entry.relatedEntry | length %} <a href={{entry.relatedEntry.one().url }}> {% endif %}
         {{entry.title}}
        {% if entry.relatedEntry | length %} </a> {% endif %}
       </span>
+      {% endif %}
+      {% set counter = counter + 1 %}
     {% endfor %}
+    </div>
+      <div>
+      {% set counterB = 0 %} 
+      {% for entry in craft.entries.section('laufschriftHome').all() %}
+      {% if counterB < (length / 2) %}
+       <span class="m-ticker__item">
+       {% if entry.relatedEntry | length %} <a href={{entry.relatedEntry.one().url }}> {% endif %}
+        {{entry.title}}
+       {% if entry.relatedEntry | length %} </a> {% endif %}
+      </span>
+      {% endif %}
+      {% set counterB = counterB + 1 %}
+    {% endfor %}
+    </div>
+  </div>
+  <div class="m-ticker m-ticker--reverse">
+    <div>
+      {% set counter2 = 0 %}
+      {% for entry in craft.entries.section('laufschriftHome').all() %}
+        {% if counter2 >= (length / 2) %}
+        <span class="m-ticker__item">
+        {% if entry.relatedEntry | length %} <a href={{entry.relatedEntry.one().url }}> {% endif %}
+          {{entry.title}}
+        {% if entry.relatedEntry | length %} </a> {% endif %}
+        </span>
+        {% endif %}
+        {% set counter2 = counter2 + 1 %}
+      {% endfor %}
+    </div>
+    <div>
+      {% set counter2B = 0 %}
+      {% for entry in craft.entries.section('laufschriftHome').all() %}
+        {% if counter2B >= (length / 2) %}
+        <span class="m-ticker__item">
+        {% if entry.relatedEntry | length %} <a href={{entry.relatedEntry.one().url }}> {% endif %}
+          {{entry.title}}
+        {% if entry.relatedEntry | length %} </a> {% endif %}
+        </span>
+        {% endif %}
+        {% set counter2B = counter2B + 1 %}
+      {% endfor %}
+    </div>
   </div>
 </section>
 <section class="t-section">

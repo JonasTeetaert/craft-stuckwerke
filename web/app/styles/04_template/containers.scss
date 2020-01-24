@@ -19,7 +19,7 @@
 }
 
 .t-section {
-    padding: $spacer*1.5 0;
+    padding: $spacer*1 0;
 }
 
 .container {
@@ -29,4 +29,10 @@
 
 .row {
     // flex-direction: column;
+}
+
+@include media-breakpoint-up(md) {
+    .t-section {
+        padding: $spacer*1.5 0;
+    }
 }

@@ -1,7 +1,46 @@
+$duration: 200;
+
 .m-ticker {
-  width: 200%;
-  height: 280px;
-  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+
+  div {
+    white-space: nowrap;
+    animation: ticker #{$duration}s linear infinite;
+    animation-delay: -#{$duration}s;
+
+    &:nth-child(2) {
+      animation: ticker2 #{$duration}s linear infinite;
+      animation-delay: - #{$duration / 2}s;
+    }
+  }
+
+  &:hover {
+    div {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes ticker2 {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
 }
 
 .m-ticker__item {
@@ -9,6 +48,7 @@
   display: inline-block;
   position: relative;
   padding-right: 65px;
+  white-space: nowrap;
 
   a {
     text-decoration: none;
@@ -22,5 +62,39 @@
     right: 0;
     top: 56.2%;
     background: $primary;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 3rem;
+    padding-right: 35px;
+
+    &:after {
+      width: 30px;
+      height: 2.5px;
+    }
+  }
+}
+
+.m-ticker--reverse {
+  div {
+    animation-direction: reverse;
+
+    &:nth-child(2) {
+      animation-direction: reverse;
+    }
+  }
+
+  .m-ticker__item {
+    padding-right: 0;
+    padding-left: 65px;
+
+    &:after {
+      right: auto;
+      left: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding-left: 35px;
+    }
   }
 }

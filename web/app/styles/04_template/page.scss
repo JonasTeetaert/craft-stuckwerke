@@ -4,8 +4,11 @@
 }
 
 .t-page__subtitle {
-  margin-top: $spacer;
   font-size: 1.25rem;
+}
+
+.t-page__title+t.t-page__subtitle {
+  margin-top: $spacer;
 }
 
 .t-page--content-header {

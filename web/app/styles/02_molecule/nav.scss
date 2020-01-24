@@ -20,6 +20,12 @@
   display: inline-block;
   width: 140px;
   margin-left: $spacer*2;
+
+  @include media-breakpoint-down(md) {
+    position: absolute;
+    top: 0;
+    right: $spacer/2;
+  }
 }
 
 .m-nav__func-nav {

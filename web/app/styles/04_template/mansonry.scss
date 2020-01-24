@@ -1,6 +1,7 @@
 .t-masonry {
   column-count: 1;
   column-gap: $spacer;
+  margin-top: $spacer * 1.5;
 }
 
 .t-masonry__item {
