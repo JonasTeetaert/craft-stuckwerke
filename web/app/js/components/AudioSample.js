@@ -1,6 +1,7 @@
 class AudioSample {
   constructor(node, audioSamples) {
     if (!node) return;
+    this.node = node;
     this.audio = node.querySelector('audio');
     this.canvas = node.querySelector('canvas');
     this.control = node.querySelector('button');
@@ -39,7 +40,7 @@ class AudioSample {
       this.start();
       this.isStarted = true;
     }
-    if (this.control.classList.contains('paused')) {
+    if (this.node.classList.contains('playing')) {
       this.pause();
     } else {
       this.play();
@@ -51,7 +52,7 @@ class AudioSample {
   }
 
   pause() {
-    this.control.classList.remove('paused');
+    this.node.classList.remove('playing');
     this.icon.classList.remove('icon-pause');
     this.icon.classList.add('icon-play');
     this.word.innerHTML = 'Play';
@@ -60,7 +61,7 @@ class AudioSample {
 
   play() {
     this.stop();
-    this.control.classList.add('paused');
+    this.node.classList.add('playing');
     this.icon.classList.remove('icon-play');
     this.icon.classList.add('icon-pause');
     this.word.innerHTML = 'Pause';
