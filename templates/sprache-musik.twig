@@ -12,6 +12,8 @@
 {% endblock %}
 
 {% block pageContent %}
+  {# {% set query = craft.entries.section('languageMusic').limit(6) %}
+  {% paginate query as pageInfo, pageEntries %} #}
   {% for sample in craft.entries.section('languageMusic').all()  %}
     <div class="m-album" id="{{ sample.slug }}">
       <div class="m-album__info">
@@ -45,4 +47,8 @@
       </div>
     </div>
   {% endfor %}
+  {# <div class="t-page__pagination">
+    {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}" rel="prev">Vorherige Seite</a>{% endif %}
+    {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}" rel="next">Nächste Seite</a>{% endif %}
+  </div> #}
 {% endblock %}

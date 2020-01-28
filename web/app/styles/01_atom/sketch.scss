@@ -26,7 +26,7 @@
 .a-sketch--soundwave {
   width: 400px;
   left: 100px;
-  bottom: 50px;
+  top: 50px;
 }
 
 .a-sketch--ovals {
@@ -40,6 +40,12 @@
   right: -20px;
   top: -300px;
   // transform: rotateZ(180deg);
+}
+
+.a-sketch--plane-waves-filmhorspiel {
+  bottom: 50px;
+  left: -100px;
+  right: -20px;
 }
 
 .a-sketch--circles-tonprod {

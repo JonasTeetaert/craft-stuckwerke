@@ -12,7 +12,9 @@
 {% endblock %}
 
 {% block pageContent %}
-  {% for sample in craft.entries.section('filmRadioPlay').all()  %}
+  {# {% set query = craft.entries.section('filmRadioPlay').limit(6) %}
+  {% paginate query as pageInfo, pageEntries %} #}
+  {% for sample in craft.entries.section('filmRadioPlay').all() %}
     <div class="m-album" id="{{ sample.slug }}">
       <div class="m-album__info">
         {% if sample.info %}
@@ -45,10 +47,14 @@
       </div>
     </div>
   {% endfor %}
+  {# <div class="t-page__pagination">
+    {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}" rel="prev">Vorherige Seite</a>{% endif %}
+    {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}" rel="next">Nächste Seite</a>{% endif %}
+  </div> #}
 {% endblock %}
 
 {% block sketch %}
-<div class="a-sketch a-sketch--soundwave">
-  {% include '_illustrations/soundwave' %}
+<div class="a-sketch a-sketch--plane-waves-filmhorspiel">
+  {% include '_illustrations/plane-waves' %}
 </div>
 {% endblock %}

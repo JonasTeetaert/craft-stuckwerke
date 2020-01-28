@@ -102,6 +102,8 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-9">
+      {# {% set query = craft.entries.section('formats').limit(6) %}
+      {% paginate query as pageInfo, pageEntries %} #}
       {% for sample in craft.entries.section('formats').all()  %}
         <div class="m-album" id="{{ sample.slug }}">
           <div class="m-album__info">
@@ -136,6 +138,10 @@
           </div>
         </div>
       {% endfor %}
+        {# <div class="t-page__pagination">
+          {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}" rel="prev">Vorherige Seite</a>{% endif %}
+          {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}" rel="next">Nächste Seite</a>{% endif %}
+        </div> #}
       </div>
     </div>
   </div>

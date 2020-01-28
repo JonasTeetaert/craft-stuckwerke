@@ -38,6 +38,15 @@
   }
 }
 
+.t-page__pagination {
+  text-align: right;
+
+  >a {
+    display: inline-block;
+    margin-left: $spacer/2;
+    margin-top: $spacer;
+  }
+}
 
 @include media-breakpoint-up(md) {
   .t-page__rte {
