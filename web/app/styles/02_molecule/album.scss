@@ -65,13 +65,14 @@
   canvas {
     height: 50px;
     width: 88%;
+    z-index: -20;
   }
 
   @include media-breakpoint-up(lg) {
 
     &.playing {
       canvas {
-        z-index: 10;
+        z-index: -15;
       }
     }
 

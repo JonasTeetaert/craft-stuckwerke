@@ -15,11 +15,11 @@
 {% for field in entry.contentBlock %}
 {% switch field.type %}
   {% case "image" %}
-  <figure class="t-page__image">
+  <figure class="a-image t-page__image">
     <picture>
     <img src={{ field.source.one().getUrl() }} alt={{ field.caption }}>
     </picture>
-    {% if entry.caption %}
+    {% if field.caption %}
       <figcaption>{{ field.caption }}</figcaption>
     {% endif %}
   </figure>
