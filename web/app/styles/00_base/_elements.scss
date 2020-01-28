@@ -5,7 +5,7 @@ html {
 body {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 300px;
+  padding-bottom: 325px;
   overflow-x: hidden;
   overflow-y: auto;
 
@@ -60,5 +60,6 @@ h4 {
 @include media-breakpoint-down(md) {
   h1 {
     margin-bottom: $spacer;
+    font-size: 2.5rem;
   }
 }

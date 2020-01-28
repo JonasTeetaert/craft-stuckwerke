@@ -1,7 +1,6 @@
 .t-masonry {
   column-count: 1;
   column-gap: $spacer;
-  margin-top: $spacer * 1.5;
 }
 
 .t-masonry__item {
@@ -18,6 +17,7 @@
 
 @include media-breakpoint-up(md) {
   .t-masonry {
+    margin-top: $spacer;
     column-count: 3;
   }
 
