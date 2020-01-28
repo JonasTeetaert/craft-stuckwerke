@@ -15,6 +15,8 @@
 .t-content-wrapper {
     padding-top: 50px;
     position: relative;
+    overflow: hidden;
+    min-height: 76vh;
 }
 
 .t-section {

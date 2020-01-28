@@ -1,0 +1,20 @@
+.a-podcast {
+  background: $light-gray;
+  padding: $spacer;
+  text-align: center;
+  margin-bottom: 5px;
+
+  .icon-speech {
+    font-size: 30px;
+  }
+}
+
+.a-podcast--modal {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: $spacer/2;
+}

@@ -1,27 +1,25 @@
 {% extends "_layouts/page" %}
 
 {% block title %}
-Hörbuch
+{{ entry.title }}
 {% endblock %}
 
 {% block pageHeader %}
-<h1 class="t-page__title">{{ category.pageTitle }}</h1>
-{% if category.pageDescription %}
-<p class="t-page__subtitle">{{ category.pageDescription }}</p>
+<h1 class="t-page__title">{{ entry.pageTitle }}</h1>
+{% if entry.pageDescription %}
+<p class="t-page__subtitle">{{ entry.pageDescription }}</p>
 {% endif %}
 {% endblock %}
 
 {% block pageContent %}
 <div class="t-masonry">
-  {% for entry in craft.entries.relatedTo(category).limit(12).all() %}
+  {% for item in craft.entries.section('audiobook').limit(12).all() %}
     <div class="m-card t-masonry__item">
-      <a href={{ entry.url }}>
         <picture>
-          <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">
+          <img src={{ item.coverImage.one().getUrl() }} alt="{{ item.artist }} - {{ item.title }}">
         </picture>
-        <span class="m-card__title">{{ entry.title }}</span>
-        <span class="m-card__artist">{{ entry.artist }} </span>
-      </a>
+        <span class="m-card__title">{{ item.title }}</span>
+        <span class="m-card__artist">{{ item.artist }} </span>
     </div>
     {% if loop.index == 1 or loop.index == 6 or loop.index == 11 %}
       <div class="t-masonry__item">

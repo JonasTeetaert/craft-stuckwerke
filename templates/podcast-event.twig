@@ -54,16 +54,18 @@
         {% for entry in craft.entries.section(['events', 'podcasts']).all() %}
         <div class="m-card t-masonry__item" data-target="modal">
           <a href="#">
-            {% if entry.coverImage %}
+            {% if entry.coverImage | length  %}
             <picture class="m-card__podcast-img">
               <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">
-            </picture>
+            </picture> 
             {% elseif entry.eventImages %}
             <picture>
               <img src={{ entry.eventImages.one().getUrl() }} alt="{{ entry.title }}">
             </picture>
             {% else %}
-            PODCAST ILLUSTRATION
+            <div class="a-podcast">
+              <span class="icon-speech"></span>
+            </div>
             {% endif %}
             <span class="m-card__title">{{ entry.title }}</span>
             {% if entry.artist %}
@@ -76,12 +78,11 @@
           <div class="m-modal">
             <div class="m-modal__inner">
               <a href="#" class="m-modal__close a-close"></a>
-              {% if entry.coverImage %}
+              {% if entry.coverImage | length %}
                 <picture class="m-modal__cover">
                   <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">
                 </picture>
-              {% endif %}
-              {% if entry.eventImages %}
+              {% elseif entry.eventImages %}
               <div class="m-modal__swiper swiper-container">
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -93,6 +94,10 @@
                   {% endfor %}
                 </div>
                 <div class="swiper-pagination"></div>
+              </div>
+              {% else %}
+              <div class="a-podcast a-podcast--modal">
+                <span class="icon-speech"></span>
               </div>
               {% endif %}
               <div class="m-modal__content">
