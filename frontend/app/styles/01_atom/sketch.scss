@@ -1,0 +1,72 @@
+.a-sketch {
+  position: absolute;
+  z-index: -10;
+}
+
+.a-sketch--circles-home {
+  @include media-breakpoint-up(md) {
+    width: 600px;
+    top: 450px;
+    right: -135px;
+  }
+}
+
+.a-sketch--tunnel {
+  bottom: 50px;
+  left: 30px;
+  width: 600px;
+}
+
+.a-sketch--wavy-circles {
+  width: 900px;
+  top: -30px;
+  right: -70px;
+}
+
+.a-sketch--soundwave {
+  width: 400px;
+  left: 100px;
+  top: 50px;
+}
+
+.a-sketch--ovals {
+  width: 250px;
+  bottom: 50px;
+  left: 100px;
+}
+
+.a-sketch--plane-waves-horbuch {
+  left: -100px;
+  right: -20px;
+  top: -300px;
+  // transform: rotateZ(180deg);
+}
+
+.a-sketch--plane-waves-filmhorspiel {
+  bottom: 50px;
+  left: -100px;
+  right: -20px;
+}
+
+.a-sketch--circles-tonprod {
+  top: 200px;
+  right: 100px;
+  width: 600px;
+}
+
+.a-sketch--dobbler {
+  top: 1000px;
+  left: 100px;
+  width: 400px;
+  transform: rotate(180deg);
+}
+
+.waves {
+  path {
+    opacity: 0;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}
