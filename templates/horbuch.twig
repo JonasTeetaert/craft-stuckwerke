@@ -14,7 +14,7 @@
 {% block pageContent %}
 <div class="t-masonry">
   {% for item in craft.entries.section('audiobook').limit(12).all() %}
-    <div class="m-card t-masonry__item">
+    <div class="m-card t-masonry__item fadein">
         <picture>
           <img src={{ item.coverImage.one().getUrl() }} alt="{{ item.artist }} - {{ item.title }}">
         </picture>

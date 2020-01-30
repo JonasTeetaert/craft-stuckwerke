@@ -3,4 +3,5 @@
 /vendor
 .DS_Store
 /frontend/node_modules
-/frontend/build/
+/frontend/build
+/web/frontend

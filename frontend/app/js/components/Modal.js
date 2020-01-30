@@ -3,6 +3,7 @@ class Modal {
     this.modal = modal;
     this.target = target;
     this.btnClose = modal.querySelector('.m-modal__close');
+    this.audio = modal.querySelector('audio');
 
     this.target.addEventListener('click', this.open.bind(this));
     this.btnClose.addEventListener('click', this.close.bind(this));
@@ -18,6 +19,7 @@ class Modal {
     e.preventDefault();
     this.modal.classList.remove('active');
     document.body.classList.remove('no-scroll');
+    if (this.audio) this.audio.pause();
   }
 }
 

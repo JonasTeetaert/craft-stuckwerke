@@ -88,7 +88,7 @@ Die Kulturfirma
       <div class="col-md-9 align-self-end t-masonry">
         {% set tag =  craft.tags().title('*highlights*').one() %}
         {% for entry in craft.entries.relatedTo(tag).limit(12).all() %}
-          <div class="m-card t-masonry__item">
+          <div class="m-card t-masonry__item fadein">
             <a href={{ entry.url }}>
               <picture>
                 <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">

@@ -1,4 +1,4 @@
-export default function fadeIn(targets) {
+export default function fadeIn(targets, classToAdd) {
   const options = {
     threshold: 1.0,
   }
@@ -7,7 +7,7 @@ export default function fadeIn(targets) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const target = entry.target;
-          target.classList.add("show");
+          target.classList.add(classToAdd);
           intersectionObserver.unobserve(target);
         }
       });

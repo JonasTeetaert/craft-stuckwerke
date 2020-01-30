@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	const cards = [].slice.call(document.querySelectorAll(".m-card"));
-	if (cards) fadeIn(cards);
+	const cards = [].slice.call(document.querySelectorAll(".fadein"));
+	if (cards) fadeIn(cards, 'show');
 
 	const waves = document.querySelectorAll('.waves path');
 	window.addEventListener('scroll', throttle(() => {
