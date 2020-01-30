@@ -1,4 +1,4 @@
-export default function fadeIn(targets, classToAdd) {
+export function fadeIn(targets, classToAdd) {
   const options = {
     threshold: 1.0,
   }
@@ -23,7 +23,7 @@ export default function fadeIn(targets, classToAdd) {
 };
 
 // Source: http://fofwebdesign.co.uk/template/_testing/scroll-in-view/add-class-to-element-when-in-view.htm
-export default function elementFromBottom(elem, classToAdd, distanceFromBottom) {
+export function elementFromBottom(elem, classToAdd, distanceFromBottom) {
   elem.forEach(el => {
     const distTop = el.getBoundingClientRect().top;
     const distBottom = window.innerHeight - distTop;
@@ -36,7 +36,7 @@ export default function elementFromBottom(elem, classToAdd, distanceFromBottom) 
 };
 
 // Ryan Taylor comment - https://remysharp.com/2010/07/21/throttling-function-calls
-export default function throttle(fn, ms) {
+export function throttle(fn, ms) {
   var time, last = 0;
   return function () {
     var a = arguments,

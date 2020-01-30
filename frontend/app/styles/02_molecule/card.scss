@@ -3,7 +3,7 @@
   margin-bottom: $spacer;
   padding-bottom: 5px;
 
-  @include media-breakpoint-up() {
+  @include media-breakpoint-up(lg) {
     &.fadein {
       opacity: 0;
       transform: translate3d(0, 25px, 0);

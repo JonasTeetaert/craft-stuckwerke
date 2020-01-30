@@ -1,12 +1,11 @@
 {
-  "name": "boilertemplate",
+  "name": "StuckWerke",
   "version": "1.0.0",
-  "description": "Frontend Template for making websites",
+  "description": "Podcast, Hörbuchproduktion, Audioguides, Tonstudio und Events im Zentrum von Hamburg",
   "author": "Jonas Teetaert",
-  "main": "src/index.html",
+  "main": "/web/index.php",
   "keywords": [
     "html5",
-    "boilerplate",
     "es6",
     "es2015",
     "babelify",
@@ -17,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/JonasTeetaert/BoilerTemplate.git"
+    "url": "https://github.com/JonasTeetaert/craft-stuckwerke"
   },
   "license": "MIT",
   "scripts": {
