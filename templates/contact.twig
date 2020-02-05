@@ -1,10 +1,10 @@
-{% extends "_layouts/page" %}
+{% extends "_layouts/main" %}
 
 {% block title %}
 {{ entry.title }}
 {% endblock %}
 
-{% block pageHeader %}
+{# {% block pageHeader %}
 <h1 class="t-page__title">{{ entry.pageTitle }}</h1>
 {% if entry.pageDescription %}
 <div class="t-page__subtitle">{{ entry.pageDescription }}</div>
@@ -30,6 +30,53 @@
 {% endblock %}
 
 {% block sketch %}
+<div class="a-sketch a-sketch--wavy-circles">
+  {% include '_illustrations/wavy-circles' %}
+</div>
+{% endblock %} #}
+
+{% block main %}
+<section class="t-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <h1 class="t-page__title">{{ entry.pageTitle }}</h1>
+        {% if entry.pageDescription %}
+          <div class="t-page__subtitle">{{ entry.pageDescription }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="t-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        {% if entry.image %}
+          <picture class="t-page__contact-image">
+            <img src={{entry.image.one().getUrl() }} alt="Contact image">
+          </picture>
+        {% endif %}
+      </div>
+      <div class="col-md-9">
+        <div class="m-contact">
+          {% for field in entry.contentBlock %}
+          {% switch field.type %}
+            {% case "contactBlock" %}
+            <div class="m-contact__item">
+              <h2>{{field.contactTitle}}</h2>
+              <div>
+                {% for row in field.contactContent %}
+                  <p>{{ row.row | raw }}</p>
+                {% endfor %}
+              </div>
+            </div>
+          {% endswitch %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+</section>
 <div class="a-sketch a-sketch--wavy-circles">
   {% include '_illustrations/wavy-circles' %}
 </div>

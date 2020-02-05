@@ -8,7 +8,7 @@
 <section class="t-section">
   {% set length = craft.entries.section('laufschriftTonproduktion') | length %}
   <div class="m-ticker">
-    <div>
+    <div class="animation">
       {% set counter = 0 %} 
       {% for entry in craft.entries.section('laufschriftTonproduktion').all() %}
       {% if counter < (length / 2) %}
@@ -21,22 +21,22 @@
       {% set counter = counter + 1 %}
     {% endfor %}
     </div>
-      <div>
-      {% set counterB = 0 %} 
-      {% for entry in craft.entries.section('laufschriftTonproduktion').all() %}
-      {% if counterB < (length / 2) %}
-       <span class="m-ticker__item">
-       {% if entry.relatedEntry | length %} <a href={{entry.relatedEntry.one().url }}> {% endif %}
-        {{entry.title}}
-       {% if entry.relatedEntry | length %} </a> {% endif %}
-      </span>
-      {% endif %}
-      {% set counterB = counterB + 1 %}
-    {% endfor %}
-    </div>
+    <div class="animation">
+    {% set counterB = 0 %} 
+    {% for entry in craft.entries.section('laufschriftTonproduktion').all() %}
+    {% if counterB < (length / 2) %}
+      <span class="m-ticker__item">
+      {% if entry.relatedEntry | length %} <a href={{entry.relatedEntry.one().url }}> {% endif %}
+      {{entry.title}}
+      {% if entry.relatedEntry | length %} </a> {% endif %}
+    </span>
+    {% endif %}
+    {% set counterB = counterB + 1 %}
+  {% endfor %}
+  </div>
   </div>
   <div class="m-ticker m-ticker--reverse">
-    <div>
+    <div class="animation">
       {% set counter2 = 0 %}
       {% for entry in craft.entries.section('laufschriftTonproduktion').all() %}
         {% if counter2 >= (length / 2) %}
@@ -49,7 +49,7 @@
         {% set counter2 = counter2 + 1 %}
       {% endfor %}
     </div>
-    <div>
+    <div class="animation">
       {% set counter2B = 0 %}
       {% for entry in craft.entries.section('laufschriftTonproduktion').all() %}
         {% if counter2B >= (length / 2) %}
@@ -67,7 +67,7 @@
 <section class="t-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 t-page--content-header">
+      <div class="col-lg-8 t-page--content-header">
         {% for field in entry.contentBlock %}
         {% switch field.type %}
           {% case "image" %}
@@ -100,8 +100,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-9">
       {# {% set query = craft.entries.section('formats').limit(6) %}
       {% paginate query as pageInfo, pageEntries %} #}
       {% for sample in craft.entries.section('formats').all()  %}

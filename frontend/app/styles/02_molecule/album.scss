@@ -76,19 +76,12 @@
 
   @include media-breakpoint-up(lg) {
 
-    &.playing {
-      canvas {
-        z-index: -15;
-      }
-    }
-
     canvas {
       position: fixed;
       left: $spacer * 1.5;
       bottom: $spacer * 1.5;
       width: 30%;
       height: 80px;
-      z-index: -20;
     }
   }
 }

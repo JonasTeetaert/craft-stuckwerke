@@ -2,9 +2,14 @@
   position: relative;
 
   span {
-    width: 24px;
+    position: relative;
+    width: 17px;
     display: inline-block;
     margin-right: 5px;
+
+    @include media-breakpoint-up(lg) {
+      width: 24px;
+    }
   }
 }
 

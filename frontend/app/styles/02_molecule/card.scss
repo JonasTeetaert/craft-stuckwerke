@@ -28,6 +28,17 @@
   picture {
     display: block;
     margin-bottom: 5px;
+    position: relative;
+  }
+}
+
+.m-card__button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  @media (min-width: 1025px) {
+    display: none;
   }
 }
 

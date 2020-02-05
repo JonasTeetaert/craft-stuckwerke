@@ -5,7 +5,7 @@ $duration: 200;
   width: 100%;
   display: flex;
 
-  div {
+  .animation {
     white-space: nowrap;
     animation: ticker #{$duration}s linear infinite;
     animation-delay: -#{$duration}s;
@@ -17,7 +17,7 @@ $duration: 200;
   }
 
   &:hover {
-    div {
+    .animation {
       animation-play-state: paused;
     }
   }
@@ -76,7 +76,7 @@ $duration: 200;
 }
 
 .m-ticker--reverse {
-  div {
+  .animation {
     animation-direction: reverse;
 
     &:nth-child(2) {

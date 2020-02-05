@@ -8,7 +8,7 @@
 <section class="t-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-lg-8">
         <h1>{{ entry.pageTitle }}</h1>
         {% if entry.pageDescription %}
         <div class="t-page__subtitle">{{ entry.pageDescription}}</div>
@@ -20,11 +20,12 @@
 <div class="a-sketch a-sketch--wavy-circles">
   {% include '_illustrations/wavy-circles' %}
 </div>
+{% if entry.contentBlock | length %}
 <section class="t-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-9">
         {% for field in entry.contentBlock %}
         {% switch field.type %}
           {% case "image" %}
@@ -46,21 +47,24 @@
     </div>
   </div>
 </section>
+{% endif %}
 <section class="t-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-9 align-self-end t-masonry">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-9 align-self-end t-masonry">
         {% for entry in craft.entries.section(['events', 'podcasts']).all() %}
         <div class="m-card t-masonry__item" data-target="modal">
           <a href="#">
             {% if entry.coverImage | length  %}
             <picture class="m-card__podcast-img">
               <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">
+              <span class="m-card__button btn">Mehr Info</span>
             </picture> 
             {% elseif entry.eventImages %}
             <picture>
               <img src={{ entry.eventImages.one().getUrl() }} alt="{{ entry.title }}">
+              <span class="m-card__button btn">Mehr Info</span>
             </picture>
             {% else %}
             <div class="a-podcast">

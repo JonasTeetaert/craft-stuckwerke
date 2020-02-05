@@ -4,6 +4,8 @@
 }
 
 .a-sketch--circles-home {
+  z-index: -9;
+
   @include media-breakpoint-up(md) {
     width: 600px;
     top: 450px;
@@ -13,8 +15,12 @@
 
 .a-sketch--tunnel {
   bottom: 50px;
-  left: 30px;
+  left: -100px;
   width: 600px;
+
+  @include media-breakpoint-up(lg) {
+    left: 30px;
+  }
 }
 
 .a-sketch--wavy-circles {

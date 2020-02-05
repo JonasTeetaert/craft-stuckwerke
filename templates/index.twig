@@ -8,7 +8,7 @@ Die Kulturfirma
 <section class="t-section m-ticker-wrapper">
   {% set length = craft.entries.section('laufschriftHome') | length %}
   <div class="m-ticker">
-    <div>
+    <div class="animation">
       {% set counter = 0 %} 
       {% for entry in craft.entries.section('laufschriftHome').all() %}
       {% if counter < (length / 2) %}
@@ -21,22 +21,22 @@ Die Kulturfirma
       {% set counter = counter + 1 %}
     {% endfor %}
     </div>
-      <div>
-      {% set counterB = 0 %} 
-      {% for entry in craft.entries.section('laufschriftHome').all() %}
-      {% if counterB < (length / 2) %}
-       <span class="m-ticker__item">
-       {% if entry.relatedEntry | length %} <a href={{entry.relatedEntry.one().url }}> {% endif %}
-        {{entry.title}}
-       {% if entry.relatedEntry | length %} </a> {% endif %}
-      </span>
-      {% endif %}
-      {% set counterB = counterB + 1 %}
-    {% endfor %}
-    </div>
+    <div class="animation">
+    {% set counterB = 0 %} 
+    {% for entry in craft.entries.section('laufschriftHome').all() %}
+    {% if counterB < (length / 2) %}
+      <span class="m-ticker__item">
+      {% if entry.relatedEntry | length %} <a href={{entry.relatedEntry.one().url }}> {% endif %}
+      {{entry.title}}
+      {% if entry.relatedEntry | length %} </a> {% endif %}
+    </span>
+    {% endif %}
+    {% set counterB = counterB + 1 %}
+  {% endfor %}
+  </div>
   </div>
   <div class="m-ticker m-ticker--reverse">
-    <div>
+    <div class="animation">
       {% set counter2 = 0 %}
       {% for entry in craft.entries.section('laufschriftHome').all() %}
         {% if counter2 >= (length / 2) %}
@@ -49,7 +49,7 @@ Die Kulturfirma
         {% set counter2 = counter2 + 1 %}
       {% endfor %}
     </div>
-    <div>
+    <div class="animation">
       {% set counter2B = 0 %}
       {% for entry in craft.entries.section('laufschriftHome').all() %}
         {% if counter2B >= (length / 2) %}
@@ -67,7 +67,7 @@ Die Kulturfirma
 <section class="t-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-lg-8">
         <p class="t-page__subtitle">{{ entry.pageDescription }}</p>
       </div>
     </div>
@@ -84,18 +84,19 @@ Die Kulturfirma
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-9 align-self-end t-masonry">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-9 align-self-end t-masonry">
         {% set tag =  craft.tags().title('*highlights*').one() %}
         {% for entry in craft.entries.relatedTo(tag).limit(12).all() %}
           <div class="m-card t-masonry__item fadein">
-            <a href={{ entry.url }}>
+            {% if entry.url %} <a href={{ entry.url }}> {% endif %}
               <picture>
                 <img src={{ entry.coverImage.one().getUrl() }} alt="{{ entry.artist }} - {{ entry.title }}">
+                {% if entry.url %} <span class="m-card__button btn">Mehr Info</span> {% endif %}
               </picture>
               <span class="m-card__title">{{ entry.title }}</span>
               <span class="m-card__artist">{{ entry.artist }} </span>
-            </a>
+            {% if entry.url %} </a> {% endif %}
           </div>
           {% if loop.index == 1 or loop.index == 6 or loop.index == 11 %}
             <div class="t-masonry__item">

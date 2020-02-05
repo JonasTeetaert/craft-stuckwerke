@@ -73,58 +73,56 @@ class AudioSample {
   }
 
   start() {
-    var AudioContext = window.AudioContext || window.webkitAudioContext || false;
-    var context;
-    if (AudioContext) {
-      context = new AudioContext();
-    }
-    // var context = new AudioContext();
-    var src = context.createMediaElementSource(this.audio);
-    var analyser = context.createAnalyser();
+    if (!window.webkitAudioContext) {
+      var context = new AudioContext();
+      var context = new AudioContext();
+      var src = context.createMediaElementSource(this.audio);
+      var analyser = context.createAnalyser();
 
-    src.connect(analyser);
-    analyser.connect(context.destination);
+      src.connect(analyser);
+      analyser.connect(context.destination);
 
-    analyser.fftSize = 256;
+      analyser.fftSize = 256;
 
-    var bufferLength = analyser.frequencyBinCount;
+      var bufferLength = analyser.frequencyBinCount;
 
-    var dataArray = new Uint8Array(bufferLength);
+      var dataArray = new Uint8Array(bufferLength);
 
-    var WIDTH = this.canvas.width;
-    var HEIGHT = this.canvas.height;
+      var WIDTH = this.canvas.width;
+      var HEIGHT = this.canvas.height;
 
-    var barWidth = (WIDTH / bufferLength) * 2.5;
-    var barHeight;
-    var x = 0;
-    var ctx = this.ctx;
+      var barWidth = (WIDTH / bufferLength) * 2.5;
+      var barHeight;
+      var x = 0;
+      var ctx = this.ctx;
 
-    function renderFrame() {
-      requestAnimationFrame(renderFrame.bind(this));
+      function renderFrame() {
+        requestAnimationFrame(renderFrame.bind(this));
 
-      x = 0;
+        x = 0;
 
-      analyser.getByteFrequencyData(dataArray);
+        analyser.getByteFrequencyData(dataArray);
 
-      ctx.fillStyle = "#fff";
-      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
-      for (var i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i];
+        for (var i = 0; i < bufferLength; i++) {
+          barHeight = dataArray[i];
 
-        // var r = barHeight + (25 * (i / bufferLength));
-        // var g = 250 * (i / bufferLength);
-        // var b = 50;
+          // var r = barHeight + (25 * (i / bufferLength));
+          // var g = 250 * (i / bufferLength);
+          // var b = 50;
 
-        ctx.fillStyle = "#06044d";
-        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+          ctx.fillStyle = "#06044d";
+          ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
 
-        x += barWidth + 1;
+          x += barWidth + 1;
+        }
       }
-    }
 
-    this.audio.play();
-    renderFrame();
+      this.audio.play();
+      renderFrame();
+    }
   }
 }
 

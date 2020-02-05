@@ -20,16 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	}, 1);
 
 	// scroll to target on on click
-	let anchorlinks = document.querySelectorAll('a[href^="#"]')
-	for (let item of anchorlinks) {
-		item.addEventListener('click', (e) => {
-			let hashval = item.getAttribute('href');
-			let target = document.querySelector(hashval);
-			scrollToTarget(target);
-			history.pushState(null, null, hashval);
-			e.preventDefault();
-		})
-	}
+	// let anchorlinks = document.querySelectorAll('a[href^="#"]');
+	// for (let item of anchorlinks) {
+	// 	item.addEventListener('click', (e) => {
+	// 		let hashval = item.getAttribute('href');
+	// 		let target = document.querySelector(hashval);
+	// 		scrollToTarget(target);
+	// 		history.pushState(null, null, hashval);
+	// 		e.preventDefault();
+	// 	})
+	// }
 
 	function scrollToTarget(target) {
 		const headerOffset = 100;
@@ -64,6 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
 				el: '.swiper-pagination',
 				clickable: true,
 			},
+			on: {
+				resize: function () {
+					this.update();
+				},
+			}
 		});
 	}
 
@@ -75,4 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (waves) elementFromBottom(waves, 'show', 100);
 	}, 50), false);
 
+	const tickers = document.querySelectorAll('.m-ticker .animation');
+	if (tickers) {
+		window.addEventListener('resize', () => {
+			tickers.forEach(ticker => {
+				ticker.classList.remove('animation');
+				void ticker.offsetWidth;
+				ticker.classList.add('animation');
+			});
+		});
+	}
 });
