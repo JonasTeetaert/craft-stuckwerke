@@ -9,7 +9,7 @@ class Navigation {
   }
 
   open(e) {
-    e.preventDefault();
+    if (e) e.preventDefault();
     if (!this.overlay.classList.contains('open')) {
       this.overlay.classList.add('open');
     }
@@ -24,5 +24,10 @@ class Navigation {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  new Navigation();
+  const nav = new Navigation();
+  if (document.cookie.replace(/(?:(?:^|.*;\s*)firstVisit\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true") {
+    nav.open();
+    console.log('cookie');
+    document.cookie = "firstVisit=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+  }
 });
